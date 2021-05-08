@@ -1,0 +1,117 @@
+@use 'sass:color';
+@import 'common';
+
+.invoice {
+    border-style: outset;
+    border-color: #00c086;
+    border-width: 5px;
+    border-radius: 4px;
+    padding-left: 1em;
+}
+
+body {
+    padding: 1em;
+    font-family: Coda Caption;
+}
+
+.top-nav a {
+    padding-right: 5%;
+}
+
+@media only screen and (max-width: 668px) {
+    .table-stacked {
+        display: block;
+
+        thead {
+            border-style: outset;
+            border-color: beige;
+            border-width: 5px;
+        }
+
+        tr {
+            display: block;
+        }
+
+        // We do not use display: none; for accessibility reasons
+        thead tr {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+
+        td {
+            display: block;
+            border: none;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            padding-left: 50%;
+            white-space: normal;
+            text-align:right;
+            padding-bottom: 20%;
+        }
+
+        td:before {
+            /* För att visa tabell rubrik */
+            content: attr(data-title);
+            /* Använder top och left för efterlikna padding */
+            position: absolute;
+            top: 0.33rem;
+            left: 0.33rem;
+            width: 20%;
+            padding-right: 0.55rem;
+            white-space: nowrap;
+            text-align:left;
+            font-weight: bold;
+        }
+    }
+}
+
+.form-button {
+    margin-left: 25%;
+    color: #fff;
+    background-color: #2049e1;
+    background-image: linear-gradient(#2049e1, #0039d0);
+    border-color: #0029c0;
+    width: 50%;
+    height: 2.4em;
+    border-radius: 4px;
+}
+
+.form-button:hover {
+    background-color: #0029c0;
+    background-image: none;
+}
+
+.form-button:active {
+    background-color: #0029c0;
+    background-image: none;
+    box-shadow: inset 0 2px 4px #0019b0;
+}
+
+
+.login-button {
+    margin-left: 25%;
+    color: #fff;
+    background-color: #20e194;
+    background-image: linear-gradient(#20e194, #0039d0);
+    border-color: #00c086;
+    width: 50%;
+    height: 2.4em;
+    border-radius: 4px;
+}
+
+.login-button:hover {
+    background-color: #00c086;
+    background-image: none;
+}
+
+.login-button:active {
+    background-color: #00c086;
+    background-image: none;
+    box-shadow: inset 0 2px 4px #00c086;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
